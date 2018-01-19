@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnapshotHelper .test() with no overrides should save expected snapshot 1`] = `
+<div
+  className="test-class-name"
+>
+  <p>
+    test text
+  </p>
+  <p>
+    detail description
+  </p>
+</div>
+`;
+
+exports[`SnapshotHelper .test() with overrides should not permanently update component from constructor 1`] = `
+<div
+  className="different-class-name"
+>
+  <p>
+    different text
+  </p>
+  <p>
+    different description
+  </p>
+</div>
+`;
+
+exports[`SnapshotHelper static .test() should save expected snapshot 1`] = `
+<div
+  className="test-class-name"
+>
+  <p>
+    test text
+  </p>
+  <p>
+    detail description
+  </p>
+</div>
+`;

@@ -1,2 +1,3 @@
-# react-test-helpers
-Test helpers for React.js snapshot and Enzyme testing
+# react-jest-snapshot-helper
+
+Helper methods for Jest snapshot testing of React components

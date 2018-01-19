@@ -1,0 +1,34 @@
+{
+  "name": "react-jest-snapshot-helper",
+  "version": "1.0.0",
+  "description": "React Jest snapshot helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --notify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianSchroer/react-jest-snapshot-helper.git"
+  },
+  "keywords": ["react", "jest", "test", "testing", "snapshot", "snapshots"],
+  "author": "Brian Schroer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrianSchroer/react-jest-snapshot-helper/issues"
+  },
+  "homepage":
+    "https://github.com/BrianSchroer/react-jest-snapshot-helper#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0"
+  }
+}
