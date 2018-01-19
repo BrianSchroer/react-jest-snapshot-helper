@@ -2,6 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { SnapshotHelper } from '../src';
 
+/* eslint-disable react/prop-types */
+
 const TestComponent = ({ className, text, details }) => (
   <div className={className}>
     <p>{text}</p>
@@ -59,7 +61,7 @@ describe('SnapshotHelper', () => {
   it('.getSnapshot() with overrides should not permanently update component from constructor', () => {
     const snapshotBefore = snapshotHelper.getSnapshot();
 
-    const actual = snapshotHelper.getSnapshot({ text: 'different text' });
+    snapshotHelper.getSnapshot({ text: 'different text' });
 
     const snapshotAfter = snapshotHelper.getSnapshot();
     expect(snapshotAfter).toEqual(snapshotBefore);
