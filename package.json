@@ -1,6 +1,6 @@
 {
   "name": "react-jest-snapshot-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Helper class to simplify Jest snapshot testing of React components with a variety of props combinations.",
   "main": "dist/index.js",
   "scripts": {
