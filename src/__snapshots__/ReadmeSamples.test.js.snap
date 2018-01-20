@@ -12,6 +12,16 @@ exports[`FacultyMember should render ROLE_COUNSELOR properly 1`] = `
     role: 
     x
   </p>
+  <div>
+    <p>
+      Math
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
 </div>
 `;
 
@@ -27,6 +37,16 @@ exports[`FacultyMember should render ROLE_PRINCIPAL properly 1`] = `
     role: 
     x
   </p>
+  <div>
+    <p>
+      Math
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
 </div>
 `;
 
@@ -42,6 +62,16 @@ exports[`FacultyMember should render ROLE_TEACHER properly 1`] = `
     role: 
     x
   </p>
+  <div>
+    <p>
+      Math
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
 </div>
 `;
 
@@ -57,5 +87,90 @@ exports[`FacultyMember should render ROLE_TEACHING_ASSISTANT properly 1`] = `
     role: 
     x
   </p>
+  <div>
+    <p>
+      Math
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`FacultyMember should render accredited English teacher properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Test Name
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+  <div>
+    <p>
+      English
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`FacultyMember should render properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Test Name
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+  <div>
+    <p>
+      Math
+    </p>
+    <p>
+      <span>
+        Accredited
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`FacultyMember should render unaccredited science teacher properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Test Name
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+  <div>
+    <p>
+      Science
+    </p>
+    <p>
+      <span>
+        Not Accredited
+      </span>
+    </p>
+  </div>
 </div>
 `;

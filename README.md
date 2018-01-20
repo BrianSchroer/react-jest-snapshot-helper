@@ -22,7 +22,7 @@ const snapshotHelper = new SnapshotHelper(
     <FacultyMember
       name="Test Name"
       role={ROLE_TEACHER}
-      speciality={{ name: 'Math', accredited: true }}
+      speciality={{ subject: 'Math', accredited: true }}
     />
   )
 );
@@ -51,10 +51,8 @@ describe('FacultyMember', () => {
 it accepts an optional _propAdjustments_ argument:
 
 ```javascript
-const snapshotHelper = new SnapshotHelper(<MyComponent {...props} />);
-
-const snapshot1 = snapshotHelper.getSnapshot();
-const snapshot2 = snapshotHelper.getSnapshot({ withImage: false });
+const teacherSnapshot = snapshotHelper.getSnapshot();
+const principalSnapshot = snapshotHelper.getSnapshot({ role: ROLE_PRINCIPAL });
 ```
 
 ### withPropsAdjuster()
@@ -66,23 +64,49 @@ _adjustedProps =_ Object.assign({}, this.props, propsAdjustments);`
 withPropsAdjuster() is a fluent syntax convenience function for overriding the default **adjustProps** function. This is useful for simpler syntax for overriding only part of a hierarchial props object.
 
 ```javascript
-describe('MyComponent', () => {
-  const snapshotHelper = new SnapshotHelper(
-    <StudentDetails
-      withImage
-      student: { name: 'Brian', level: 'Senior', grade: 'A' }
-    />
-  )
-  .withPropsAdjuster((props, overrides) => {
-    withImage: props.withImage,
-    student: Object.assign({}, props.student, overrides)
-  }));
+const snapshotHelper = new SnapshotHelper(
+  <FacultyMember {...defaultProps} />
+).withPropsAdjuster((props, adjustments) =>
+  Object.assign({}, props, {
+    speciality: Object.assign({}, props.speciality, adjustments)
+  })
+);
 
-// Override adjustor to override "student" properties, not parent props:
+// ^ Override adjustor to override "child" specialty properties, not parent props:
 
-  ['A', 'B', 'C', 'D', 'F'].forEach(grade => {
-    it(`should render properly for grade "${grade}"`, () => {
-      snapshotHelper.test({grade: grade });
-    })
+describe('FacultyMember', () => {
+  it('should render accredited English teacher properly', () => {
+    snapshotHelper.test({ subject: 'English', accredited: true });
   });
+  it('should render unaccredited science teacher properly', () => {
+    snapshotHelper.test({ subject: 'Science', accredited: false });
+  });
+});
+```
+
+### Static functions
+
+If you don't need the ability to test a variety of props, you can
+just use the static **getSnapshot** and **test** methods:
+
+```javascript
+describe('FacultyMember', () => {
+  const snapshot = SnapshotHelper.getSnapshot(
+    <FacultyMember {...defaultProps} />
+  );
+
+  it('should render properly', () => {
+    SnapshotHelper.test(<FacultyMember {...defaultProps} />);
+  });
+});
+```
+
+(The static calls above are the equivalent of the following:)
+
+```javascript
+const snapshot = new SnapshotHelper(
+  <FacultyMember {...defaultProps} />
+).getSnapshot();
+
+new SnapshotHelper(<FacultyMember {...defaultProps} />).test();
 ```
