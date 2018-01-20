@@ -30,7 +30,9 @@
     "url": "https://github.com/BrianSchroer/react-jest-snapshot-helper/issues"
   },
   "homepage": "https://github.com/BrianSchroer/react-jest-snapshot-helper#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react-test-renderer": "^16.2.0"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -44,7 +46,6 @@
     "jest": "^22.1.4",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
-    "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
