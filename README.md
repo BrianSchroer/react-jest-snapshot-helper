@@ -13,7 +13,7 @@ Helper class to simplify Jest snapshot testing of React components with a variet
 ## Usage
 
 ```javascript
-import SnapshotHelper from 'react-jest-snapshot-helper';
+import { SnapshotHelper } from 'react-jest-snapshot-helper';
 import FacultyMember from './components/FacultyMember';
 
 // constructor "remembers" component type and props
