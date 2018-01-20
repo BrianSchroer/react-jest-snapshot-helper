@@ -1,1 +1,2 @@
-export { default as SnapshotHelper } from './SnapshotHelper';
+import { default as SnapshotHelper } from './SnapshotHelper';
+export default SnapshotHelper;

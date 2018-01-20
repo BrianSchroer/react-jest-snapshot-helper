@@ -1,10 +1,11 @@
 {
   "name": "react-jest-snapshot-helper",
   "version": "1.0.0",
-  "description": "React Jest snapshot helper",
-  "main": "index.js",
+  "description":
+    "Helper class to simplify Jest snapshot testing of React components with a variety of props combinations.",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist --ignore test.js",
+    "build": "babel src --out-dir dist --ignore components,test.js",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "lint": "esw src",
     "prebuild": "npm-run-all clean-dist test lint",

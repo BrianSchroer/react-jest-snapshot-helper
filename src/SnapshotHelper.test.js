@@ -1,15 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { SnapshotHelper } from '../src';
-
-/* eslint-disable react/prop-types */
-
-const TestComponent = ({ className, text, details }) => (
-  <div className={className}>
-    <p>{text}</p>
-    <p>{details.description}</p>
-  </div>
-);
+import SnapshotHelper from '../src';
+import TestComponent from './components/TestComponent';
 
 describe('SnapshotHelper', () => {
   const testComponentInstance = (

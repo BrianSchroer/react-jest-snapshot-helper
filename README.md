@@ -1,6 +1,6 @@
 # react-jest-snapshot-helper
 
-Helper class to simplify Jest snapshot testing of React components with a variety of props.
+Helper class to simplify Jest snapshot testing of React components with a variety of props combinations.
 
 ## Install
 
@@ -13,36 +13,35 @@ Helper class to simplify Jest snapshot testing of React components with a variet
 ## Usage
 
 ```javascript
-import { SnapshotHelper } from 'react-jest-snapshot-helper';
-import MyComponent from './MyComponent';
+import SnapshotHelper from 'react-jest-snapshot-helper';
+import FacultyMember from './components/FacultyMember';
 
-describe('MyComponent', () => {
-  // constructor "remembers" component type and props
-  const snapshotHelper = new SnapshotHelper(
-    <MyComponent
-      text="test text"
-      isImportant={false}
-      withImage={true}
-      className="my-class-name"
+// constructor "remembers" component type and props
+const snapshotHelper = new SnapshotHelper(
+  (
+    <FacultyMember
+      name="Test Name"
+      role={ROLE_TEACHER}
+      speciality={{ name: 'Math', accredited: true }}
     />
-  );
+  )
+);
 
-  it('should render properly with image when isImportant is false', () => {
-    // test() without arguments tests snapshot for constructor-supplied props
-    snapshotHelper.test();
-  });
+describe('FacultyMember', () => {
+  // test() without arguments tests snapshot for constructor-supplied props:
+  it('should render ROLE_TEACHER properly', () => snapshotHelper.test());
 
-  // test() with propAdjustments argument creates new component instance
-  // with adjustments assigned to the constructor-supplied props
-  // and tests snapshot
-  it('should render properly when isImportant is true', () => {
-      snapshotHelper.test({ isImportant: true });
-    });
-  );
-
-  it('should render properly when important without image' () => {
-    snapshotHelper.test({ isImportant: true, withImage: false});
-  });
+  // test() with propAdjustments argument tests snapshot of new component
+  // instance with adjustments assigned to original constructor-supplied props:
+  it('should render ROLE_PRINCIPAL properly', () =>
+    snapshotHelper.test({ name: 'Big Cheese', role: ROLE_PRINCIPAL }));
+  it('should render ROLE_COUNSELOR properly', () =>
+    snapshotHelper.test({ name: 'Deanna Troi', role: ROLE_COUNSELOR }));
+  it('should render ROLE_TEACHING_ASSISTANT properly', () =>
+    snapshotHelper.test({
+      name: 'Snappy Helper',
+      role: ROLE_TEACHING_ASSISTANT
+    }));
 });
 ```
 

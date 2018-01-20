@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacultyMember should render ROLE_COUNSELOR properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Deanna Troi
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+</div>
+`;
+
+exports[`FacultyMember should render ROLE_PRINCIPAL properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Big Cheese
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+</div>
+`;
+
+exports[`FacultyMember should render ROLE_TEACHER properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Test Name
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+</div>
+`;
+
+exports[`FacultyMember should render ROLE_TEACHING_ASSISTANT properly 1`] = `
+<div
+  className="faculty-member"
+>
+  <p>
+    name: 
+    Snappy Helper
+  </p>
+  <p>
+    role: 
+    x
+  </p>
+</div>
+`;
