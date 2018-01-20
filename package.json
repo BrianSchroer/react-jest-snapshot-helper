@@ -1,7 +1,8 @@
 {
   "name": "react-jest-snapshot-helper",
   "version": "1.0.1",
-  "description": "Helper class to simplify Jest snapshot testing of React components with a variety of props combinations.",
+  "description":
+    "Helper class to simplify Jest snapshot testing of React components with a variety of props combinations.",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist --ignore components,test.js",
@@ -16,20 +17,14 @@
     "type": "git",
     "url": "git+https://github.com/BrianSchroer/react-jest-snapshot-helper.git"
   },
-  "keywords": [
-    "react",
-    "jest",
-    "test",
-    "testing",
-    "snapshot",
-    "snapshots"
-  ],
+  "keywords": ["react", "jest", "test", "testing", "snapshot", "snapshots"],
   "author": "Brian Schroer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BrianSchroer/react-jest-snapshot-helper/issues"
   },
-  "homepage": "https://github.com/BrianSchroer/react-jest-snapshot-helper#readme",
+  "homepage":
+    "https://github.com/BrianSchroer/react-jest-snapshot-helper#readme",
   "dependencies": {},
   "devDependencies": {
     "babel": "^6.23.0",
